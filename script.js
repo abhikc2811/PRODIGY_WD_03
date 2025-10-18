@@ -167,3 +167,10 @@ resetButton.addEventListener('click', handleRestartGame);
 if (singlePlayer && currentPlayer === 'O') {
     setTimeout(computerMove, 300);
 }
+
+const modeSelector = document.getElementById('game-mode');
+modeSelector.addEventListener('change', () => {
+    singlePlayer = modeSelector.value === 'single';
+    handleRestartGame(); // restart game when mode changes
+});
+
